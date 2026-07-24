@@ -39,8 +39,6 @@
     padding:5px 12px;border-radius:999px;border:1px solid var(--line);background:var(--card);
   }
   .dot{width:11px;height:11px;border-radius:50%;display:inline-block;}
-  .edit-hint{font-size:12.5px;color:#5c6663;margin:10px 0 4px;}
-  .edit-hint b{color:var(--accent);}
   .note-box{
     margin:14px 0 20px;
     background:#fdf3ef;
@@ -53,7 +51,6 @@
     color:var(--ink);
   }
   .note-box b{color:#802424;}
-
   /* ---- calendar grid ---- */
   .cal-shell{
     margin-top:18px;background:var(--card);border-radius:12px;
@@ -90,7 +87,7 @@
   .shiftline{
     display:flex;align-items:center;gap:4px;
     font-size:10.5px;line-height:1.3;font-weight:600;
-    border-radius:4px;padding:2px 5px;margin-bottom:2px;cursor:text;
+    border-radius:4px;padding:2px 5px;margin-bottom:2px;
   }
   .shiftline .tag{font-family:var(--mono);font-weight:700;opacity:.65;}
   .shiftline[data-person="ฟีดา"]{background:var(--feeda);color:var(--feeda-ink);}
@@ -98,8 +95,6 @@
   .shiftline[data-person="เมย์"]{background:var(--may);color:var(--may-ink);}
   .shiftline[data-person="ปาม"]{background:var(--pam);color:var(--pam-ink);}
   .shiftline[data-person="มุนี"]{background:var(--munee);color:var(--munee-ink);}
-  .shiftline[contenteditable="true"]:focus,
-  .offline[contenteditable="true"]:focus{outline:2px solid var(--accent);outline-offset:0;background:#fff;}
 
   .offline{
     display:flex;align-items:center;gap:4px;
@@ -155,9 +150,7 @@
     <span class="chip"><span class="dot" style="background:var(--pam-strong)"></span>ปาม</span>
     <span class="chip"><span class="dot" style="background:var(--munee-strong)"></span>มุนี (cover)</span>
   </div>
-  <p class="edit-hint"><b>หมายเหตุ:</b> เกรสลา 13-16 ส.ค. มุนีเข้ามาคัฟกะ 16.00-24.00 วันที่ 15-16 ส.ค. แทน ส่วนวันที่ 13-14 ส.ค. ทีมที่เหลือสลับกันอุดช่องให้ · ปามสลับวันหยุดของสัปดาห์นั้นจากพฤหัส (13 ส.ค.) ไปเป็นอังคาร (11 ส.ค.) แทน เพื่อให้วันที่ 13 ยังมีคนทำงานครบ 3 คน สัปดาห์อื่นปามหยุดพฤหัสตามปกติ</p>
-  <p class="edit-hint"><b>แก้ไขได้:</b> คลิกที่บรรทัดกะ หรือบรรทัดวันหยุด ในแต่ละวันแล้วพิมพ์ทับได้เลย</p>
-
+  <p class="section-sub" style="margin-top:8px;"><b>หมายเหตุ:</b> เกรสลา 13-16 ส.ค. มุนีเข้ามาคัฟกะ 16.00-24.00 วันที่ 15-16 ส.ค. แทน ส่วนวันที่ 13-14 ส.ค. ทีมที่เหลือสลับกันอุดช่องให้ · ปามสลับวันหยุดของสัปดาห์นั้นจากพฤหัส (13 ส.ค.) ไปเป็นอังคาร (11 ส.ค.) แทน เพื่อให้วันที่ 13 ยังมีคนทำงานครบ 3 คน สัปดาห์อื่นปามหยุดพฤหัสตามปกติ</p>
   <div class="cal-shell">
     <p class="scroll-hint">⇔ เลื่อนซ้าย-ขวาเพื่อดูตารางแบบเต็ม</p>
     <div class="cal-scroll">
@@ -172,7 +165,7 @@
   <p class="section-sub">จำนวนวันเข้ากะแต่ละประเภทตลอดทั้งเดือน</p>
   <div class="summary-grid" id="summary"></div>
 
-  <footer>generated for LGH admin ops · แก้ไขปฏิทินด้านบนได้โดยตรง (คลิก → พิมพ์ทับ) · ไม่ถูกบันทึกอัตโนมัติ กรุณาเซฟไฟล์ใหม่หากต้องเก็บการแก้ไข</footer>
+  <footer>generated for LGH admin ops · สำหรับดูอย่างเดียว (view-only) · หากต้องแก้ไขตาราง ติดต่อผู้จัดตาราง</footer>
 </div>
 
 <script>
@@ -259,7 +252,6 @@ for(let i=0;i<totalCells;i++){
         const line = document.createElement("div");
         line.className = "shiftline";
         line.setAttribute("data-person", shifts[s]);
-        line.setAttribute("contenteditable","true");
         line.innerHTML = `<span class="tag">${shiftLabel[s]}</span><span class="name">${shifts[s]}</span>`;
         cell.appendChild(line);
       }
@@ -267,7 +259,6 @@ for(let i=0;i<totalCells;i++){
 
     const offLine = document.createElement("div");
     offLine.className = "offline";
-    offLine.setAttribute("contenteditable","true");
     if(off){
       offLine.setAttribute("data-person", off);
       offLine.innerHTML = `<span class="tag">หยุด</span><span class="name">${off}</span>`;
