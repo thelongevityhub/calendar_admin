@@ -14,11 +14,13 @@
     --mono:"IBM Plex Mono","SFMono-Regular",Consolas,monospace;
 
     /* person colors */
-    --feeda:#fbe0ae;    --feeda-ink:#8a5a10;   --feeda-strong:#e0a13a;
-    --grace:#c7ead2;    --grace-ink:#1f6b43;   --grace-strong:#4fa571;
-    --may:#cfe0f8;      --may-ink:#28518f;     --may-strong:#6893cf;
-    --pam:#e6d7f5;      --pam-ink:#5b3a94;     --pam-strong:#a67fd6;
-    --munee:#f7d2e0;    --munee-ink:#9c2f5c;   --munee-strong:#d6538c;
+    --feeda:#ffdfb8;    --feeda-ink:#8a4a05;   --feeda-strong:#f0932b;
+    --grace:#d1f0d4;    --grace-ink:#145c2a;   --grace-strong:#4caf50;
+    --may:#cfe0fc;      --may-ink:#0f3d80;     --may-strong:#3b7dd8;
+    --pam:#e6d1fa;      --pam-ink:#5b1a8a;     --pam-strong:#9b4fd9;
+    --munee:#ffd6ea;    --munee-ink:#8a1155;   --munee-strong:#e0499a;
+    --cherry:#c2f0f5;   --cherry-ink:#0a5c66;  --cherry-strong:#1fa8c4;
+    --koi:#ffd6d1;      --koi-ink:#8a1f14;     --koi-strong:#e8543f;
   }
   *{box-sizing:border-box;}
   body{
@@ -72,7 +74,7 @@
     padding:10px 0;text-align:center;font-weight:600;
   }
   .cal-head div.weekend{color:#e7b79a;}
-  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:minmax(118px,auto);}
+  .cal-grid{display:grid;grid-template-columns:repeat(7,1fr);grid-auto-rows:minmax(165px,auto);}
   .cell{
     border-right:1px solid var(--line);border-bottom:1px solid var(--line);
     padding:6px 6px 8px;position:relative;background:var(--card);
@@ -95,6 +97,8 @@
   .shiftline[data-person="เมย์"]{background:var(--may);color:var(--may-ink);}
   .shiftline[data-person="ปาม"]{background:var(--pam);color:var(--pam-ink);}
   .shiftline[data-person="มุนี"]{background:var(--munee);color:var(--munee-ink);}
+  .shiftline[data-person="เชอรี่"]{background:var(--cherry);color:var(--cherry-ink);}
+  .shiftline[data-person="ก้อย"]{background:var(--koi);color:var(--koi-ink);}
 
   .offline{
     display:flex;align-items:center;gap:4px;
@@ -103,11 +107,13 @@
     border:1.5px dashed transparent;background:transparent;
   }
   .offline .tag{font-family:var(--mono);opacity:.6;font-weight:700;}
-  .offline[data-person="ฟีดา"]{border-color:var(--feeda-strong);color:var(--feeda-ink);background:#fdf3de;}
-  .offline[data-person="เกรส"]{border-color:var(--grace-strong);color:var(--grace-ink);background:#e9f7ee;}
-  .offline[data-person="เมย์"]{border-color:var(--may-strong);color:var(--may-ink);background:#e7f0fc;}
-  .offline[data-person="ปาม"]{border-color:var(--pam-strong);color:var(--pam-ink);background:#f3ecfa;}
-  .offline[data-person="มุนี"]{border-color:var(--munee-strong);color:var(--munee-ink);background:#fbe6ee;}
+  .offline[data-person="ฟีดา"]{border-color:var(--feeda-strong);color:var(--feeda-ink);background:#fff2dd;}
+  .offline[data-person="เกรส"]{border-color:var(--grace-strong);color:var(--grace-ink);background:#e6f7e7;}
+  .offline[data-person="เมย์"]{border-color:var(--may-strong);color:var(--may-ink);background:#e5f0fd;}
+  .offline[data-person="ปาม"]{border-color:var(--pam-strong);color:var(--pam-ink);background:#f2e6fc;}
+  .offline[data-person="มุนี"]{border-color:var(--munee-strong);color:var(--munee-ink);background:#ffe6f2;}
+  .offline[data-person="เชอรี่"]{border-color:var(--cherry-strong);color:var(--cherry-ink);background:#e2f7f9;}
+  .offline[data-person="ก้อย"]{border-color:var(--koi-strong);color:var(--koi-ink);background:#ffe9e6;}
 
   .section-title{margin:46px 0 4px;font-size:19px;font-weight:800;}
   .section-sub{color:#5c6663;font-size:13px;margin-bottom:14px;}
@@ -124,7 +130,7 @@
 
   @media (max-width:820px){
     .scroll-hint{display:block;}
-    .cal-grid{grid-auto-rows:minmax(96px,auto);}
+    .cal-grid{grid-auto-rows:minmax(150px,auto);}
     .shiftline,.offline{font-size:9px;}
     .datenum{font-size:11px;}
     .cal-head div{font-size:10px;}
@@ -138,7 +144,7 @@
   <div class="eyebrow">Longevity Hub · Ops · Admin Shift Plan</div>
   <h1>ปฏิทินกะทีมแอดมิน — สิงหาคม 2026</h1>
   <p class="sub">
-    4 คน (ฟีดา · เกรส · เมย์ · ปาม) ทำงานคนละ 6 วัน/สัปดาห์ หยุดคนละ 1 วัน/สัปดาห์ ตามเงื่อนไขที่กำหนด
+    6 คน (ฟีดา · เกรส · เมย์ · ปาม · เชอรี่ · ก้อย) ทำงานคนละ 6 วัน/สัปดาห์ หยุดคนละ 1 วัน/สัปดาห์ ตามเงื่อนไขที่กำหนด
     และอ้างอิงความหนาแน่นแชทจาก Heatmap ทีม — แต่ละคนมี<b>สีประจำตัว</b>คงที่ทุกกะและทุกวัน
     (ช่องหยุดของแต่ละคนก็ใช้สีเดียวกัน แต่เป็นกรอบประเปรียบเพื่อให้รู้ว่าเป็นวันหยุดไม่ใช่วันเข้ากะ)
   </p>
@@ -148,9 +154,12 @@
     <span class="chip"><span class="dot" style="background:var(--grace-strong)"></span>เกรส</span>
     <span class="chip"><span class="dot" style="background:var(--may-strong)"></span>เมย์</span>
     <span class="chip"><span class="dot" style="background:var(--pam-strong)"></span>ปาม</span>
+    <span class="chip"><span class="dot" style="background:var(--cherry-strong)"></span>เชอรี่</span>
+    <span class="chip"><span class="dot" style="background:var(--koi-strong)"></span>ก้อย</span>
     <span class="chip"><span class="dot" style="background:var(--munee-strong)"></span>มุนี (cover)</span>
   </div>
-  <p class="section-sub" style="margin-top:8px;"><b>หมายเหตุ:</b> เกรสลา 13-16 ส.ค. มุนีเข้ามาคัฟกะ 16.00-24.00 วันที่ 15-16 ส.ค. แทน ส่วนวันที่ 13-14 ส.ค. ทีมที่เหลือสลับกันอุดช่องให้ · ปามสลับวันหยุดของสัปดาห์นั้นจากพฤหัส (13 ส.ค.) ไปเป็นอังคาร (11 ส.ค.) แทน เพื่อให้วันที่ 13 ยังมีคนทำงานครบ 3 คน สัปดาห์อื่นปามหยุดพฤหัสตามปกติ</p>
+  <p class="section-sub" style="margin-top:8px;"><b>หมายเหตุ:</b> แต่ละคนมีกะเวลาคงที่กะเดียวตลอดเดือน — ฟีดา 08.00 / ปาม 09.00 / เชอรี่ 11.00 / ก้อย 12.00 / เมย์ 15.00 / เกรส 16.00 ใครไม่มาคือหยุดตามวันประจำของตัวเอง</p>
+  <p class="section-sub"><b>เกรสลา 13-16 ส.ค.:</b> มุนีคัฟกะ 16.00-24.00 วันที่ 15-16 ส.ค. ส่วนวันที่ 13-14 ส.ค. เมย์ขยับมาคุมกะ 16.00-24.00 แทน ทำให้กะ 16.00-24.00 มีคนคัฟครบทั้ง 4 วันแล้ว</p>
   <div class="cal-shell">
     <p class="scroll-hint">⇔ เลื่อนซ้าย-ขวาเพื่อดูตารางแบบเต็ม</p>
     <div class="cal-scroll">
@@ -173,37 +182,37 @@ const DOW_HEAD = ["จันทร์","อังคาร","พุธ","พฤ�
 
 // [date, weekday(0=Mon..6=Sun), {shift:name}, offName]
 const days = [
-  [1,5,{"08":"ฟีดา","12":"เกรส","16":"ปาม"},"เมย์"],
-  [2,6,{"08":"เมย์","12":"เกรส","16":"ปาม"},"ฟีดา"],
-  [3,0,{"08":"ฟีดา","09":"ปาม","12":"เมย์","16":"เกรส"},""],
-  [4,1,{"08":"ฟีดา","09":"ปาม","12":"เมย์","16":"เกรส"},""],
-  [5,2,{"08":"ฟีดา","12":"เมย์","16":"ปาม"},"เกรส"],
-  [6,3,{"08":"ฟีดา","12":"เมย์","16":"เกรส"},"ปาม"],
-  [7,4,{"08":"ฟีดา","09":"ปาม","12":"เมย์","16":"เกรส"},""],
-  [8,5,{"08":"ฟีดา","12":"เกรส","16":"ปาม"},"เมย์"],
-  [9,6,{"08":"เมย์","12":"เกรส","16":"ปาม"},"ฟีดา"],
-  [10,0,{"08":"ฟีดา","09":"ปาม","12":"เมย์","16":"เกรส"},""],
-  [11,1,{"08":"ฟีดา","12":"เมย์","16":"เกรส"},"ปาม"],
-  [12,2,{"08":"ฟีดา","12":"เมย์","16":"ปาม"},"เกรส"],
-  [13,3,{"08":"ฟีดา","12":"เมย์","16":"ปาม"},""],
-  [14,4,{"08":"ฟีดา","12":"เมย์","16":"ปาม"},""],
-  [15,5,{"08":"ฟีดา","12":"ปาม","16":"มุนี"},"เมย์"],
-  [16,6,{"08":"เมย์","12":"ปาม","16":"มุนี"},"ฟีดา"],
-  [17,0,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [18,1,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [19,2,{"08":"ปาม","12":"ฟีดา","16":"เมย์"},"เกรส"],
-  [20,3,{"08":"เกรส","12":"ฟีดา","16":"เมย์"},"ปาม"],
-  [21,4,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [22,5,{"08":"เกรส","12":"ฟีดา","16":"ปาม"},"เมย์"],
-  [23,6,{"08":"เมย์","12":"เกรส","16":"ปาม"},"ฟีดา"],
-  [24,0,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [25,1,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [26,2,{"08":"ปาม","12":"ฟีดา","16":"เมย์"},"เกรส"],
-  [27,3,{"08":"เกรส","12":"ฟีดา","16":"เมย์"},"ปาม"],
-  [28,4,{"08":"เกรส","09":"ปาม","12":"ฟีดา","16":"เมย์"},""],
-  [29,5,{"08":"เกรส","12":"ฟีดา","16":"ปาม"},"เมย์"],
-  [30,6,{"08":"เมย์","12":"เกรส","16":"ปาม"},"ฟีดา"],
-  [31,0,{"08":"ฟีดา","09":"ปาม","12":"เมย์","16":"เกรส"},""],
+  [1,5,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","15":"ก้อย"},["เมย์"]],
+  [2,6,{"16":"เกรส","11":"เชอรี่","08":"ปาม","15":"ก้อย","09":"เมย์"},["ฟีดา"]],
+  [3,0,{"08":"ฟีดา","09":"ปาม","16":"เกรส","12":"ก้อย","15":"เมย์"},["เชอรี่"]],
+  [4,1,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","15":"เมย์"},["ก้อย"]],
+  [5,2,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","16":"เมย์","15":"ก้อย"},["เกรส"]],
+  [6,3,{"08":"ฟีดา","16":"เกรส","11":"เชอรี่","12":"เมย์","15":"ก้อย"},["ปาม"]],
+  [7,4,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย","15":"เมย์"},[]],
+  [8,5,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย"},["เมย์"]],
+  [9,6,{"16":"เกรส","11":"เชอรี่","12":"ก้อย","08":"ปาม","09":"เมย์"},["ฟีดา"]],
+  [10,0,{"08":"ฟีดา","09":"ปาม","16":"เกรส","12":"ก้อย","15":"เมย์"},["เชอรี่"]],
+  [11,1,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","15":"เมย์"},["ก้อย"]],
+  [12,2,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","12":"ก้อย","16":"เมย์"},["เกรส"]],
+  [13,3,{"08":"ฟีดา","11":"เชอรี่","16":"เมย์","15":"ก้อย"},["ปาม"]],
+  [14,4,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","16":"เมย์","15":"ก้อย"},[]],
+  [15,5,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","16":"มุนี","15":"ก้อย"},["เมย์"]],
+  [16,6,{"11":"เชอรี่","12":"ก้อย","16":"มุนี","08":"ปาม","09":"เมย์"},["ฟีดา"]],
+  [17,0,{"08":"ฟีดา","09":"ปาม","16":"เกรส","12":"ก้อย","15":"เมย์"},["เชอรี่"]],
+  [18,1,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","15":"เมย์"},["ก้อย"]],
+  [19,2,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","12":"ก้อย","16":"เมย์"},["เกรส"]],
+  [20,3,{"08":"ฟีดา","16":"เกรส","11":"เชอรี่","12":"ก้อย","15":"เมย์"},["ปาม"]],
+  [21,4,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย","15":"เมย์"},[]],
+  [22,5,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย"},["เมย์"]],
+  [23,6,{"16":"เกรส","11":"เชอรี่","12":"ก้อย","08":"ปาม","09":"เมย์"},["ฟีดา"]],
+  [24,0,{"08":"ฟีดา","09":"ปาม","16":"เกรส","12":"ก้อย","15":"เมย์"},["เชอรี่"]],
+  [25,1,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","15":"เมย์"},["ก้อย"]],
+  [26,2,{"08":"ฟีดา","09":"ปาม","11":"เชอรี่","12":"ก้อย","16":"เมย์"},["เกรส"]],
+  [27,3,{"08":"ฟีดา","16":"เกรส","11":"เชอรี่","12":"ก้อย","15":"เมย์"},["ปาม"]],
+  [28,4,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย","15":"เมย์"},[]],
+  [29,5,{"08":"ฟีดา","09":"ปาม","16":"เกรส","11":"เชอรี่","12":"ก้อย"},["เมย์"]],
+  [30,6,{"16":"เกรส","11":"เชอรี่","12":"ก้อย","08":"ปาม","09":"เมย์"},["ฟีดา"]],
+  [31,0,{"08":"ฟีดา","09":"ปาม","16":"เกรส","12":"ก้อย","15":"เมย์"},["เชอรี่"]],
 ];
 
 // ---- header row ----
@@ -224,7 +233,7 @@ const totalCells = Math.ceil((FIRST_WEEKDAY + DAYS_IN_MONTH) / 7) * 7;
 const byDate = {};
 days.forEach(d => byDate[d[0]] = d);
 
-const shiftLabel = {"08":"08.00-16.00","09":"09.00-17.00","12":"12.00-20.00","16":"16.00-24.00"};
+const shiftLabel = {"08":"08.00-16.00","09":"09.00-17.00","11":"11.00-19.00","12":"12.00-20.00","15":"15.00-23.00","16":"16.00-24.00"};
 
 for(let i=0;i<totalCells;i++){
   const dayNum = i - FIRST_WEEKDAY + 1;
@@ -247,7 +256,7 @@ for(let i=0;i<totalCells;i++){
     dn.textContent = dayNum;
     cell.appendChild(dn);
 
-    ["08","09","12","16"].forEach(s=>{
+    ["08","09","11","12","15","16"].forEach(s=>{
       if(shifts[s]){
         const line = document.createElement("div");
         line.className = "shiftline";
@@ -257,33 +266,35 @@ for(let i=0;i<totalCells;i++){
       }
     });
 
-    const offLine = document.createElement("div");
-    offLine.className = "offline";
-    if(off){
-      offLine.setAttribute("data-person", off);
-      offLine.innerHTML = `<span class="tag">หยุด</span><span class="name">${off}</span>`;
-    }
-    cell.appendChild(offLine);
+    off.forEach(person=>{
+      const offLine = document.createElement("div");
+      offLine.className = "offline";
+      offLine.setAttribute("data-person", person);
+      offLine.innerHTML = `<span class="tag">หยุด</span><span class="name">${person}</span>`;
+      cell.appendChild(offLine);
+    });
   }
   gridEl.appendChild(cell);
 }
 
 // ---- summary ----
 const people = {
-  "ฟีดา": {role:"จ-ส: เข้ากะ 08.00-16.00 ⇄ 12.00-20.00 สลับทุก 2 สัปดาห์ (เสาร์ตามบล็อกเดียวกับวันธรรมดา) · หยุดวันอาทิตย์", counts:{"08":0,"09":0,"12":0,"16":0}, off:[], color:"var(--feeda-strong)"},
-  "เมย์": {role:"จ-ศ: เข้ากะ 12.00-20.00 ⇄ 16.00-24.00 สลับทุก 2 สัปดาห์ · อาทิตย์เข้า 08.00-16.00 เสมอ · หยุดวันเสาร์", counts:{"08":0,"09":0,"12":0,"16":0}, off:[], color:"var(--may-strong)"},
-  "เกรส": {role:"จ,อ,พฤ,ศ: เข้าได้ทุกกะ (สวิงตามบล็อก 2 สัปดาห์) · อาทิตย์เข้า 12.00-20.00 เสมอ (เสาร์ตามบล็อกเดียวกับวันธรรมดา) · หยุดวันพุธเท่านั้น", counts:{"08":0,"09":0,"12":0,"16":0}, off:[], color:"var(--grace-strong)"},
-  "ปาม": {role:"ยืดหยุ่นเต็มที่ อุดช่องว่างทุกวัน · เสาร์-อาทิตย์เข้า 16.00-24.00 เป็นหลัก (15-16 ส.ค. มุนีคัฟแทน) · หยุดวันพฤหัส (ยกเว้นสัปดาห์ของวันที่ 11 ส.ค. หยุดอังคารแทน)", counts:{"08":0,"09":0,"12":0,"16":0}, off:[], color:"var(--pam-strong)"},
-  "มุนี": {role:"คัฟให้เกรสช่วงลา 13-16 ส.ค. · เข้ากะ 16.00-24.00 วันที่ 15-16 ส.ค.", counts:{"08":0,"09":0,"12":0,"16":0}, off:[], color:"var(--munee-strong)"},
+  "ฟีดา": {role:"เข้ากะ 08.00-16.00 ทุกวัน ยกเว้นวันหยุด · หยุดวันอาทิตย์", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--feeda-strong)"},
+  "เมย์": {role:"จ,พฤ,ศ: เข้ากะ 15.00-23.00 (มีวันที่ปรับพิเศษ 6,13,14 ส.ค.) · ทุกวันพุธเข้า 16.00-24.00 แทน (คุมช่องที่เกรสหยุด) · ทุกวันอาทิตย์เข้า 09.00-17.00 แทน (คุมช่องที่ปามย้ายไป 08.00) · หยุดวันเสาร์", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--may-strong)"},
+  "เกรส": {role:"เข้ากะ 16.00-24.00 ทุกวัน ยกเว้นวันหยุด/วันลา · หยุดวันพุธ (13-16 ส.ค. ลาเพิ่มเติม)", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--grace-strong)"},
+  "ปาม": {role:"จ-ส: เข้ากะ 09.00-17.00 · ทุกวันอาทิตย์เข้า 08.00-16.00 แทน (คุมช่องที่ฟีดาหยุด) · หยุดวันพฤหัส", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--pam-strong)"},
+  "มุนี": {role:"คัฟให้เกรสช่วงลา · เข้ากะ 16.00-24.00 วันที่ 15-16 ส.ค. (13-14 ส.ค. ไม่มีคนคัฟ กะ 16.00 ว่าง — ดูหมายเหตุด้านบน)", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--munee-strong)"},
+  "เชอรี่": {role:"เข้ากะ 11.00-19.00 ทุกวัน ยกเว้นวันหยุด · หยุดวันจันทร์", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--cherry-strong)"},
+  "ก้อย": {role:"ปกติเข้ากะ 12.00-20.00 · มีวันที่ปรับเป็น 15.00-23.00 แทน (1,2,5,6,13,14,15 ส.ค.) · หยุดวันอังคาร", counts:{"08":0,"09":0,"11":0,"12":0,"15":0,"16":0}, off:[], color:"var(--koi-strong)"},
 };
 days.forEach(([date, dowIdx, shifts, off])=>{
-  ["08","09","12","16"].forEach(s=>{
+  ["08","09","11","12","15","16"].forEach(s=>{
     const name = shifts[s];
     if(name && people[name]) people[name].counts[s]++;
   });
-  if(off && people[off]) people[off].off.push(date+" "+["จ","อ","พ","พฤ","ศ","ส","อา"][dowIdx]);
+  off.forEach(o=>{ if(people[o]) people[o].off.push(date+" "+["จ","อ","พ","พฤ","ศ","ส","อา"][dowIdx]); });
 });
-const fullShiftLabel = {"08":"08.00-16.00 เช้า","09":"09.00-17.00 สาย","12":"12.00-20.00 บ่าย","16":"16.00-24.00 ดึก"};
+const fullShiftLabel = {"08":"08.00-16.00 เช้า","09":"09.00-17.00 สาย","11":"11.00-19.00 สาย2","12":"12.00-20.00 บ่าย","15":"15.00-23.00 บ่าย2","16":"16.00-24.00 ดึก"};
 const summaryEl = document.getElementById("summary");
 Object.entries(people).forEach(([name,data])=>{
   const total = Object.values(data.counts).reduce((a,b)=>a+b,0);
@@ -293,7 +304,7 @@ Object.entries(people).forEach(([name,data])=>{
   card.innerHTML = `
     <h3>${name}</h3>
     <div class="role">${data.role}</div>
-    ${["08","09","12","16"].map(s=>`
+    ${["08","09","11","12","15","16"].map(s=>`
       <div class="stat-row"><span>${fullShiftLabel[s]}</span><span class="n">${data.counts[s]} วัน</span></div>
     `).join("")}
   `;
